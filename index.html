@@ -9,58 +9,48 @@
   <style>
     :root{
       --brand:#0a6cff;
-      --brand-600:#0757cc;
+      --brand-light:#66a5ff;
       --ink:#0b1220;
       --muted:#6b7a90;
       --soft:#f5f8ff;
-      --card:#ffffff;
-      --ring: 0 0 0 4px rgba(10,108,255,.12);
-      --radius:18px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{background:linear-gradient(180deg,#f7faff 0%,#fff 40%);color:var(--ink);font-family:system-ui,-apple-system,Pretendard,Segoe UI,Roboto,sans-serif}
-    body{padding-bottom:92px}
-    img{max-width:100%;display:block}/* 고급스럽게: 유리/그라데이션, 부드러운 그림자 */
-.glass{background:rgba(255,255,255,.82);backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(15,23,42,.06);border:1px solid rgba(10,108,255,.08)}
-.shadow-card{box-shadow:0 12px 30px rgba(15,23,42,.08)}
-
-header{position:sticky;top:0;z-index:70}
-.header-wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #e8eefc}
-.header-bar{background:linear-gradient(180deg,#ffffffcc,#ffffffcc)}
+    html,body{font-family:'Pretendard', 'Noto Sans KR', sans-serif;background:linear-gradient(180deg,#f8fbff,#ffffff 40%);color:var(--ink);padding-bottom:92px}
+    img{max-width:100%;display:block}header{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid #e5e7eb}
+.header-wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 14px}
 .brand h1{font-size:18px;font-weight:900;letter-spacing:-.02em}
-.cta{background:linear-gradient(135deg,var(--brand),#66a5ff);color:#fff;font-weight:800;padding:10px 16px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(10,108,255,.35)}
+.cta{background:linear-gradient(135deg,var(--brand),var(--brand-light));color:#fff;font-weight:800;padding:10px 16px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(10,108,255,.35)}
 
-/* 상단 고정 버튼(고장접수/가입상담) */
-.top-cta{position:sticky;top:54px;z-index:65;padding:8px 12px}
-.top-cta .pillbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.pill{display:flex;justify-content:center;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;font-weight:900;text-decoration:none}
-.pill.repair{background:#3b3b6d;color:#fff}
-.pill.signup{background:linear-gradient(135deg,#ff3696,#ff7ac2);color:#fff}
+.top-cta{position:sticky;top:54px;z-index:65;padding:8px 12px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px)}
+.pillbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pill{display:flex;justify-content:center;align-items:center;padding:10px 12px;border-radius:999px;font-weight:900;text-decoration:none;color:#fff}
+.pill.repair{background:#0a6cff}
+.pill.signup{background:linear-gradient(135deg,#0a6cff,#66a5ff)}
 
-/* 히어로 + 배너 슬라이드 */
-.hero{padding:18px 12px 8px;text-align:center}
-.hero .title{font-size:clamp(22px,6.2vw,34px);font-weight:900;line-height:1.2;margin:8px 0}
+.hero{text-align:center;padding:22px 12px 12px}
+.hero .title{font-size:clamp(22px,6vw,34px);font-weight:900;line-height:1.25;margin:8px 0}
 .hero .subtitle{color:var(--muted);font-size:14px}
-.slider{margin:12px auto 6px;max-width:960px;border-radius:16px;overflow:hidden}
-.slide{display:none;padding:16px 14px}
+
+/* 슬라이드 배너 */
+.slider{margin:16px auto;max-width:960px;border-radius:16px;overflow:hidden;position:relative}
+.slide{display:none;padding:16px;text-align:center;color:#fff}
 .slide.active{display:block}
-.slide .banner{border-radius:16px;padding:16px;background:linear-gradient(135deg,#e8f0ff,#ffffff);border:1px solid #e8eefc}
-.banner h3{margin:0 0 6px;font-size:16px}
-.banner p{margin:0;color:#43526b;font-size:13px}
+.banner{border-radius:16px;padding:20px;background:linear-gradient(135deg,#0a6cff,#66a5ff);box-shadow:0 8px 20px rgba(10,108,255,.25)}
+.banner h3{margin:0 0 6px;font-size:18px;font-weight:800}
+.banner p{margin:0;font-size:14px}
 
-/* KPI + 콜버튼 */
-.hero-kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:8px auto 12px;max-width:480px}
+.hero-kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:8px auto 14px;max-width:480px}
 .kpi{border:1px solid #e8eefc;border-radius:14px;padding:12px;background:#fff}
-.call-btn{display:inline-block;background:linear-gradient(135deg,var(--brand),#66a5ff);color:#fff;font-weight:900;padding:14px 20px;border-radius:14px;text-decoration:none;box-shadow:0 10px 28px rgba(10,108,255,.35)}
 
-/* 공통 섹션 */
+.call-btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand-light));color:#fff;font-weight:900;padding:14px 20px;border-radius:14px;text-decoration:none;box-shadow:0 10px 28px rgba(10,108,255,.35);animation:shine 2s infinite alternate}
+@keyframes shine{from{filter:brightness(100%)}to{filter:brightness(115%)}}
+
 section{padding:20px 12px}
 .section-title{font-size:20px;font-weight:900;margin-bottom:12px}
 
-/* 요금 테이블(고급 톤) */
 .pricewrap{display:grid;gap:18px}
-.ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid #e6ebf5;border-radius:16px;overflow:hidden;background:#fff}
-.ptable thead th{background:linear-gradient(180deg,#f8fbff,#f3f7ff);text-align:center;padding:12px;border-bottom:1px solid #e6ebf5}
+.ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid #e6ebf5;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.ptable thead th{background:linear-gradient(180deg,#e8f0ff,#d9e8ff);color:#0b1d4f;text-align:center;padding:12px;border-bottom:1px solid #e6ebf5}
 .ptable td{padding:12px;border-bottom:1px solid #f0f3fa;text-align:center}
 .ptable tr:nth-child(even){background:#fbfdff}
 .ptable .left{text-align:left}
@@ -70,51 +60,39 @@ section{padding:20px 12px}
 .ptag.gold{background:#fff3bf;border:1px solid #fde68a;color:#92400e}
 .weak{color:#6b7a90;font-size:12px}
 
-footer{padding:24px 12px;background:#f7f9fe;border-top:1px solid #e8eefc;color:#465569}
+footer{padding:24px 12px;background:#f7f9fe;border-top:1px solid #e8eefc;color:#465569;text-align:center}
 
-/* 하단 고정바 */
 .dock{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e8eefc;display:flex;gap:8px;padding:10px 12px;z-index:80}
 .dock a{flex:1;text-align:center;padding:12px 14px;border-radius:12px;font-weight:900;text-decoration:none}
-.btn-primary{background:linear-gradient(135deg,var(--brand),#66a5ff);color:#fff;box-shadow:0 6px 18px rgba(10,108,255,.35)}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-light));color:#fff;box-shadow:0 6px 18px rgba(10,108,255,.35);animation:shine 2s infinite alternate}
 .btn-ghost{border:1px solid #dbe6ff;color:#0f172a;background:#fff}
-
-@media (min-width:768px){.slider{margin-top:16px}}
 
   </style>
 </head>
 <body>
-  <header class="header-bar glass">
+  <header>
     <div class="header-wrap">
       <div class="brand"><h1>CCS 충북방송 가입센터</h1></div>
       <a class="cta" href="tel:01084753598">📞 가입문의</a>
     </div>
-  </header>
-  <!-- 상단 고정 버튼: 고장접수 / 가입상담 -->
-  <div class="top-cta">
+  </header>  <div class="top-cta">
     <div class="pillbar">
       <a class="pill repair" href="tel:01084753598">📞 고장접수 전화</a>
       <a class="pill signup" href="tel:01084753598">📝 가입상담 신청</a>
     </div>
   </div>  <section class="hero">
     <p class="subtitle">진천 · 음성 · 충주 · 제천 지역 전담</p>
-    <h2 class="title">인터넷·TV 가입 / 이전설치는<br/>지금 바로 전화로 끝!</h2><!-- 프로모션 슬라이드 -->
-<div class="slider">
+    <h2 class="title">인터넷·TV 가입 / 이전설치는<br/>지금 바로 전화로 끝!</h2><div class="slider">
   <div class="slide active">
-    <div class="banner shadow-card">
-      <h3>★ 11월 특가 상품</h3>
-      <p>보급형HD 105(3년) · 인터넷100(3년) 결합 시 <strong>3개월 무료</strong></p>
+    <div class="banner">
+      <h3>★ 11월 특가 · 최대 4개월 무료 이벤트 중!</h3>
+      <p>보급형HD 105(3년) + 인터넷100(3년) 결합 상품 대상</p>
     </div>
   </div>
   <div class="slide">
-    <div class="banner shadow-card">
-      <h3>아파트/오피스텔 우대</h3>
-      <p>기가슬림 500M(4년) <strong>4개월 무료</strong> + 설치 품질 안내</p>
-    </div>
-  </div>
-  <div class="slide">
-    <div class="banner shadow-card">
-      <h3>이전 설치 지원</h3>
-      <p>이사 일정 맞춤 예약 · 비용은 현장 여건에 따라 상이</p>
+    <div class="banner">
+      <h3>🏢 아파트/오피스텔 전용 우대요금</h3>
+      <p>기가슬림 500M(4년) 신규 시 설치비 일부 지원</p>
     </div>
   </div>
 </div>
@@ -125,195 +103,46 @@ footer{padding:24px 12px;background:#f7f9fe;border-top:1px solid #e8eefc;color:#
 </div>
 <a class="call-btn" href="tel:01084753598">📞 지금 전화하기 (010-8475-3598)</a>
 
-  </section>
-  <script>
-    // 간단한 자동 슬라이더
-    let _idx=0; const _slides=()=>Array.from(document.querySelectorAll('.slide'));
-    setInterval(()=>{const s=_slides(); if(!s.length) return; s[_idx].classList.remove('active'); _idx=(
-      _idx+1)%s.length; s[_idx].classList.add('active');},3500);
+  </section>  <script>
+    let _i=0;const s=()=>document.querySelectorAll('.slide');
+    setInterval(()=>{const slides=s();if(!slides.length)return;slides[_i].classList.remove('active');_i=(_i+1)%slides.length;slides[_i].classList.add('active');},3500);
   </script>  <section id="plans">
     <h3 class="section-title">요금제 안내</h3>
-    <style>
-      .pricewrap{display:grid;gap:16px}
-      .ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
-      .ptable thead th{background:#f8fafc;text-align:center;padding:10px;border-bottom:1px solid #e5e7eb;position:sticky;top:0}
-      .ptable td{padding:10px;border-bottom:1px solid #eef2f7;text-align:center}
-      .ptable tr:nth-child(even){background:#fcfdff}
-      .ptable .left{text-align:left}
-      .ptag{display:inline-block;background:#fff3bf;color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:800}
-      .ptag.pink{background:#ffe4f1;color:#be185d;border-color:#fecdd3}
-      .ptag.blue{background:#e0edff;color:#1d4ed8;border-color:#c7d8ff}
-      .weak{color:#64748b;font-size:12px}
-      @media(max-width:480px){.ptable{font-size:13px}}
-    </style><div class="pricewrap">
-  <!-- TV 요금 -->
-  <table class="ptable" aria-label="TV 요금">
-    <thead>
-      <tr>
-        <th>TV 상품</th>
-        <th>월 요금(원)</th>
-        <th>프로모션</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left">케이블TV 98채널</td>
-        <td>9,500</td>
-        <td><span class="ptag pink">3개월 무료</span> <span class="weak">설치비 상담</span></td>
-      </tr>
-      <tr>
-        <td class="left">보급형HD 105채널 <span class="weak">(4년)</span></td>
-        <td>10,000</td>
-        <td><span class="ptag blue">4개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
-      </tr>
-      <tr>
-        <td class="left">보급형HD 105채널 <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
-        <td>11,000</td>
-        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
-      </tr>
-      <tr>
-        <td class="left">기본형HD 142채널</td>
-        <td>13,200</td>
-        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
-      </tr>
-      <tr>
-        <td class="left">고급형HD 174채널</td>
-        <td>14,300</td>
-        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
-      </tr>
-      <tr>
-        <td class="left">보급형HD <span class="weak">(추가시)</span></td>
-        <td>6,600</td>
-        <td class="weak">TV 추가 할인가</td>
-      </tr>
-      <tr>
-        <td class="left">케이블TV <span class="weak">(추가시)</span></td>
-        <td>5,500</td>
-        <td class="weak">TV 추가 할인가</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- 인터넷 요금 -->
+    <div class="pricewrap">
+      <!-- TV 요금 -->
+      <table class="ptable" aria-label="TV 요금">
+        <thead><tr><th>TV 상품</th><th>월 요금(원)</th><th>프로모션</th></tr></thead>
+        <tbody>
+          <tr><td class="left">케이블TV 98채널</td><td>9,500</td><td><span class="ptag pink">3개월 무료</span></td></tr>
+          <tr><td class="left">보급형HD 105채널(3년)</td><td>11,000</td><td><span class="ptag blue">11월 특가</span></td></tr>
+          <tr><td class="left">기본형HD 142채널</td><td>13,200</td><td><span class="ptag pink">3개월 무료</span></td></tr>
+          <tr><td class="left">고급형HD 174채널</td><td>14,300</td><td><span class="ptag blue">4개월 무료</span></td></tr>
+        </tbody>
+      </table><!-- 인터넷 요금 -->
   <table class="ptable" aria-label="인터넷 요금">
-    <thead>
-      <tr>
-        <th>인터넷</th>
-        <th>월 요금(원)</th>
-        <th>프로모션</th>
-      </tr>
-    </thead>
+    <thead><tr><th>인터넷</th><th>월 요금(원)</th><th>프로모션</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="left">인터넷 100M <span class="weak">(4년)</span></td>
-        <td>9,900</td>
-        <td><span class="ptag blue">4개월 무료</span> <span class="weak">요금할인 상품</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷 100M <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
-        <td>12,100</td>
-        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품</span></td>
-      </tr>
-      <tr>
-        <td class="left">기가슬림 500M <span class="weak">(4년)</span></td>
-        <td>12,100</td>
-        <td><span class="weak">아파트/오피스텔</span> <span class="ptag blue">4개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">기가슬림 500M <span class="weak">(3년)</span></td>
-        <td>15,400</td>
-        <td><span class="weak">아파트/오피스텔</span> <span class="ptag pink">3개월 무료</span></td>
-      </tr>
+      <tr><td class="left">인터넷 100M(3년)</td><td>12,100</td><td><span class="ptag pink">3개월 무료</span></td></tr>
+      <tr><td class="left">인터넷 100M(4년)</td><td>9,900</td><td><span class="ptag blue">4개월 무료</span></td></tr>
+      <tr><td class="left">기가슬림 500M(4년)</td><td>12,100</td><td><span class="ptag gold">아파트 우대</span></td></tr>
     </tbody>
   </table>
 
-  <!-- 인터넷 + TV 결합 -->
+  <!-- 인터넷+TV -->
   <table class="ptable" aria-label="인터넷+TV">
-    <thead>
-      <tr>
-        <th>인터넷 + TV</th>
-        <th>월 요금(원)</th>
-        <th>프로모션</th>
-      </tr>
-    </thead>
+    <thead><tr><th>인터넷 + TV</th><th>월 요금(원)</th><th>프로모션</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="left">인터넷100 + 케이블TV 98 <span class="ptag">★ 11월 특가</span></td>
-        <td>20,110</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 보급형HD 105 <span class="weak">(4년)</span></td>
-        <td>17,390</td>
-        <td><span class="ptag blue">4개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 보급형HD 105 <span class="weak">(3년)</span></td>
-        <td>21,230</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 기본형HD 142 <span class="weak">(4년)</span></td>
-        <td>21,000</td>
-        <td><span class="ptag blue">4개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 기본형HD 142 <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
-        <td>23,740</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 고급형HD 174 <span class="weak">(4년)</span></td>
-        <td>21,840</td>
-        <td><span class="ptag blue">4개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">인터넷100 + 고급형HD 174 <span class="weak">(3년)</span></td>
-        <td>24,040</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">기가슬림 500M + 보급형HD 105</td>
-        <td>24,040</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
-      <tr>
-        <td class="left">기가슬림 500M + 기본형HD 142</td>
-        <td>27,970</td>
-        <td><span class="ptag pink">3개월 무료</span></td>
-      </tr>
+      <tr><td class="left">인터넷100 + 보급형HD105(3년)</td><td>21,230</td><td><span class="ptag pink">3개월 무료</span></td></tr>
+      <tr><td class="left">인터넷100 + 기본형HD142(4년)</td><td>21,000</td><td><span class="ptag blue">4개월 무료</span></td></tr>
+      <tr><td class="left">기가슬림500M + 기본형HD142</td><td>27,970</td><td><span class="ptag pink">3개월 무료</span></td></tr>
     </tbody>
   </table>
-
-  <!-- 인터넷 전화 -->
-  <table class="ptable" aria-label="인터넷 전화">
-    <thead>
-      <tr>
-        <th>인터넷 전화</th>
-        <th>월 요금(원)</th>
-        <th>비고</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="left">MTA</td>
-        <td>2,200</td>
-        <td class="weak">고객님 전화기 연결</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p class="weak">※ 부가세 포함, 설치비/부자재/광랜 가능 지역 등은 주소/건물 유형에 따라 상이합니다. 정확한 조건은 <a href="tel:01084753598">전화 상담</a>으로 안내드립니다.</p>
 </div>
 
-  </section>  <section id="contact">
-    <h3 class="section-title">대표전화</h3>
-    <a class="call-btn" href="tel:01084753598">전화 연결</a>
   </section>  <footer>
     <strong>CCS 충북방송 가입센터</strong><br/>
     상담전화: 010-8475-3598<br/><br/>
-    ※ 본 페이지는 이해를 돕기 위한 비공식 안내 페이지입니다. 실제 상품·요금은 상담 시 확정됩니다. 카카오톡 상담은 제공하지 않습니다.<br/>
-    사업자정보/주소/통신판매업 등은 정식 운영 시 업데이트하세요.
+    ※ 본 페이지는 비공식 안내용이며, 실제 상품·요금은 상담 시 확정됩니다.
   </footer>  <div class="dock">
     <a class="btn-primary" href="tel:01084753598">📞 가입문의(바로전화)</a>
     <a class="btn-ghost" href="#plans">요금제</a>
