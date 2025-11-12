@@ -53,21 +53,180 @@
     </div>
     <a class="call-btn" href="tel:01084753598">📞 지금 전화하기 (010-8475-3598)</a>
   </section>  <section id="plans">
-    <h3 class="section-title">인기 요금제</h3>
-    <div class="plans">
-      <div class="plan">
-        <div class="head"><span>인터넷 100M</span><span class="badge">가성비</span></div>
-        <div class="price">월 17,600원</div>
-      </div>
-      <div class="plan">
-        <div class="head"><span>인터넷 500M + TV</span><span class="badge">인기</span></div>
-        <div class="price">월 29,700원</div>
-      </div>
-      <div class="plan">
-        <div class="head"><span>기가 1G + 프리미엄 TV</span><span class="badge">고급형</span></div>
-        <div class="price">월 44,000원</div>
-      </div>
-    </div>
+    <h3 class="section-title">요금제 안내</h3>
+    <style>
+      .pricewrap{display:grid;gap:16px}
+      .ptable{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+      .ptable thead th{background:#f8fafc;text-align:center;padding:10px;border-bottom:1px solid #e5e7eb;position:sticky;top:0}
+      .ptable td{padding:10px;border-bottom:1px solid #eef2f7;text-align:center}
+      .ptable tr:nth-child(even){background:#fcfdff}
+      .ptable .left{text-align:left}
+      .ptag{display:inline-block;background:#fff3bf;color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:800}
+      .ptag.pink{background:#ffe4f1;color:#be185d;border-color:#fecdd3}
+      .ptag.blue{background:#e0edff;color:#1d4ed8;border-color:#c7d8ff}
+      .weak{color:#64748b;font-size:12px}
+      @media(max-width:480px){.ptable{font-size:13px}}
+    </style><div class="pricewrap">
+  <!-- TV 요금 -->
+  <table class="ptable" aria-label="TV 요금">
+    <thead>
+      <tr>
+        <th>TV 상품</th>
+        <th>월 요금(원)</th>
+        <th>프로모션</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">케이블TV 98채널</td>
+        <td>9,500</td>
+        <td><span class="ptag pink">3개월 무료</span> <span class="weak">설치비 상담</span></td>
+      </tr>
+      <tr>
+        <td class="left">보급형HD 105채널 <span class="weak">(4년)</span></td>
+        <td>10,000</td>
+        <td><span class="ptag blue">4개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
+      </tr>
+      <tr>
+        <td class="left">보급형HD 105채널 <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
+        <td>11,000</td>
+        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
+      </tr>
+      <tr>
+        <td class="left">기본형HD 142채널</td>
+        <td>13,200</td>
+        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
+      </tr>
+      <tr>
+        <td class="left">고급형HD 174채널</td>
+        <td>14,300</td>
+        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품 · HD셋톱박스</span></td>
+      </tr>
+      <tr>
+        <td class="left">보급형HD <span class="weak">(추가시)</span></td>
+        <td>6,600</td>
+        <td class="weak">TV 추가 할인가</td>
+      </tr>
+      <tr>
+        <td class="left">케이블TV <span class="weak">(추가시)</span></td>
+        <td>5,500</td>
+        <td class="weak">TV 추가 할인가</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 인터넷 요금 -->
+  <table class="ptable" aria-label="인터넷 요금">
+    <thead>
+      <tr>
+        <th>인터넷</th>
+        <th>월 요금(원)</th>
+        <th>프로모션</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">인터넷 100M <span class="weak">(4년)</span></td>
+        <td>9,900</td>
+        <td><span class="ptag blue">4개월 무료</span> <span class="weak">요금할인 상품</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷 100M <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
+        <td>12,100</td>
+        <td><span class="ptag pink">3개월 무료</span> <span class="weak">요금할인 상품</span></td>
+      </tr>
+      <tr>
+        <td class="left">기가슬림 500M <span class="weak">(4년)</span></td>
+        <td>12,100</td>
+        <td><span class="weak">아파트/오피스텔</span> <span class="ptag blue">4개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">기가슬림 500M <span class="weak">(3년)</span></td>
+        <td>15,400</td>
+        <td><span class="weak">아파트/오피스텔</span> <span class="ptag pink">3개월 무료</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 인터넷 + TV 결합 -->
+  <table class="ptable" aria-label="인터넷+TV">
+    <thead>
+      <tr>
+        <th>인터넷 + TV</th>
+        <th>월 요금(원)</th>
+        <th>프로모션</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">인터넷100 + 케이블TV 98 <span class="ptag">★ 11월 특가</span></td>
+        <td>20,110</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 보급형HD 105 <span class="weak">(4년)</span></td>
+        <td>17,390</td>
+        <td><span class="ptag blue">4개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 보급형HD 105 <span class="weak">(3년)</span></td>
+        <td>21,230</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 기본형HD 142 <span class="weak">(4년)</span></td>
+        <td>21,000</td>
+        <td><span class="ptag blue">4개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 기본형HD 142 <span class="weak">(3년)</span> <span class="ptag">★ 11월 특가</span></td>
+        <td>23,740</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 고급형HD 174 <span class="weak">(4년)</span></td>
+        <td>21,840</td>
+        <td><span class="ptag blue">4개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">인터넷100 + 고급형HD 174 <span class="weak">(3년)</span></td>
+        <td>24,040</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">기가슬림 500M + 보급형HD 105</td>
+        <td>24,040</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+      <tr>
+        <td class="left">기가슬림 500M + 기본형HD 142</td>
+        <td>27,970</td>
+        <td><span class="ptag pink">3개월 무료</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 인터넷 전화 -->
+  <table class="ptable" aria-label="인터넷 전화">
+    <thead>
+      <tr>
+        <th>인터넷 전화</th>
+        <th>월 요금(원)</th>
+        <th>비고</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">MTA</td>
+        <td>2,200</td>
+        <td class="weak">고객님 전화기 연결</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="weak">※ 부가세 포함, 설치비/부자재/광랜 가능 지역 등은 주소/건물 유형에 따라 상이합니다. 정확한 조건은 <a href="tel:01084753598">전화 상담</a>으로 안내드립니다.</p>
+</div>
+
   </section>  <section id="contact">
     <h3 class="section-title">대표전화</h3>
     <a class="call-btn" href="tel:01084753598">전화 연결</a>
