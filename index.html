@@ -107,6 +107,25 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
   .hero-card{grid-template-columns:1.3fr .7fr}
   .steps{grid-template-columns:repeat(4,1fr)}
 }
+/* 모바일 보강 */
+body{padding-bottom:92px;} /* 하단 고정바 공간 확보 */
+.container{padding:0 12px}
+@media (max-width:480px){
+  .brand .logo{display:none}
+  .header-wrap{padding:8px 0}
+  .hero .title{font-size: clamp(22px, 6.4vw, 32px)}
+  .hero .subtitle{font-size:13px}
+  .hero-kpi{grid-template-columns:repeat(2,1fr)}
+  .call-btn{font-size:16px;padding:12px 14px}
+  .ghost-btn{padding:12px 14px}
+  .kpi b{font-size:16px}
+  .kpi span{font-size:11px}
+  .feature h3{font-size:15px}
+  .feature p{font-size:12px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .hero-card{grid-template-columns:1fr}
+  .hero picture{display:none} /* 작은 화면에서는 히어로 이미지를 숨김 */
+}
 
   </style>
   <script>
@@ -130,7 +149,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
         <!-- 사이트 타이틀: 가운데 정렬 & 크게 (요청 반영) -->
         <h1 style="font-size:20px;font-weight:900;margin-left:4px;text-align:center;width:100%">CCS 충북방송 가입센터</h1>
       </div>
-      <a class="cta" data-tel aria-label="가입문의 전화">
+      <a class="cta" data-tel aria-label="가입문의 전화" href="tel:01084753598">
         📞 가입문의
       </a>
     </div>
@@ -145,7 +164,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
         <div class="kpi"><b>친절 상담</b><span>설치까지 1:1 안내</span></div>
       </div>
       <div class="call-row">
-        <a class="call-btn" data-tel>📞 지금 전화하기 (<span data-tel-text></span>)</a>
+        <a class="call-btn" data-tel href="tel:01084753598">📞 지금 전화하기 (<span data-tel-text></span>)</a>
         <a class="ghost-btn" href="#plans">요금제 보기</a>
       </div>
     </div>
@@ -178,7 +197,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
           <li>3년 약정 / 설치비 별도</li>
           <li>상담 시 결합/사은 혜택 안내</li>
         </ul>
-        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel>이 요금제로 문의</a></div>
+        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel href="tel:01084753598">이 요금제로 문의</a></div>
       </article><article class="plan">
     <div class="head">
       <div class="name">인터넷 500M + TV</div>
@@ -190,7 +209,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
       <li>셋톱 포함 / 와이파이 가능</li>
       <li>3년 약정 / 설치비 별도</li>
     </ul>
-    <div style="margin-top:12px"><a class="btn btn-ghost" data-tel>이 요금제로 문의</a></div>
+    <div style="margin-top:12px"><a class="btn btn-ghost" data-tel href="tel:01084753598">이 요금제로 문의</a></div>
   </article>
 
   <article class="plan">
@@ -204,19 +223,11 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
       <li>UHD 셋톱 / 와이파이 공유기</li>
       <li>3년 약정 / 설치비 별도</li>
     </ul>
-    <div style="margin-top:12px"><a class="btn btn-ghost" data-tel>이 요금제로 문의</a></div>
+    <div style="margin-top:12px"><a class="btn btn-ghost" data-tel href="tel:01084753598">이 요금제로 문의</a></div>
   </article>
 </div>
 
-  </section>  <!-- 요금표(이미지) -->  <section class="container" id="price-image">
-    <h3 class="section-title">요금제 표</h3>
-    <p style="margin:6px 0 12px;color:#64748b;font-size:14px">아래 이미지는 최신 요금 안내표입니다. 세부 조건(약정/임대료/사은혜택 등)은 전화 상담 시 정확히 안내드립니다.</p>
-    <picture>
-      <!-- 여기에 네가 보낸 요금표 이미지를 업로드 후 파일 경로로 교체하세요. 예: /prices/ccs-plan-2025-11.jpg -->
-      <img src="/prices/ccs-plan.jpg" alt="CCS 충북방송 요금제 표" loading="lazy" width="1200" height="700" style="border:1px solid #e8eefc;border-radius:16px"/>
-    </picture>
-    <div style="margin-top:12px"><a class="btn btn-primary" data-tel>이 요금으로 가입 문의</a></div>
-  </section>  <!-- 지역/커버리지 -->  <section class="container" id="areas">
+  </section>  <!-- 요금표(이미지) -->  <!-- 지역/커버리지 -->  <section class="container" id="areas">
     <h3 class="section-title">설치 가능 지역</h3>
     <div class="chips">
       <span class="chip">진천군</span>
@@ -259,7 +270,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
           <li>지역·주소에 따라 상이 (전화 상담 시 상세 안내)</li>
           <li>한정 수량/기간 프로모션은 조기 종료 가능</li>
         </ul>
-        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel>사은 혜택 문의</a></div>
+        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel href="tel:01084753598">사은 혜택 문의</a></div>
       </article>
       <article class="plan">
         <div class="head"><div class="name">이전 설치 지원</div><span class="badge">이사철</span></div>
@@ -268,7 +279,7 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
           <li>방문 일정 조율 및 설치 품질 안내</li>
           <li>설치비/부자재 비용은 현장 여건에 따라 상이</li>
         </ul>
-        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel>이전 설치 문의</a></div>
+        <div style="margin-top:12px"><a class="btn btn-ghost" data-tel href="tel:01084753598">이전 설치 문의</a></div>
       </article>
     </div>
   </section>  <!-- 리뷰 -->  <section class="container" id="reviews">
@@ -316,13 +327,13 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
     <div class="container footer-grid">
       <div>
         <strong>CCS 충북방송 가입센터</strong>
-        <div style="margin-top:6px">상담전화: <a data-tel data-tel-text>010-8475-3598</a></div>
+        <div style="margin-top:6px">상담전화: <a data-tel data-tel-text href="tel:01084753598">010-8475-3598</a></div>
         <div class="fine" style="margin-top:8px">※ 본 페이지는 이해를 돕기 위한 비공식 안내 페이지입니다. 실제 상품·요금은 상담 시 확정됩니다. 카카오톡 상담은 제공하지 않습니다.</div>
         <div class="fine" style="margin-top:6px">사업자정보/주소/통신판매업 등은 정식 운영 시 업데이트하세요.</div>
       </div>
     </div>
   </footer>  <!-- 하단 고정 상담바 (카톡 버튼 제거, 요청 반영) -->  <div class="dock">
-    <a class="btn btn-primary dock-call" data-tel>📞 가입문의 (바로 전화)</a>
+    <a class="btn btn-primary dock-call" data-tel href="tel:01084753598">📞 가입문의 (바로 전화)</a>
     <a class="btn btn-ghost" href="#plans">요금제</a>
   </div>  <script>
     // 부드러운 앵커 스크롤 (간단)
@@ -343,5 +354,5 @@ footer{padding:32px 0 96px;background:var(--bg-soft);border-top:1px solid #e5e7e
     "url": "https://example.com",
     "image": "/og-cover.jpg"
   }
- </script></body>
+  </script></body>
 </html>
