@@ -12,10 +12,10 @@
     section { padding:60px 20px; text-align:center; }
     
     /* 헤더 */
-    header { position:sticky; top:0; background:#003bb3; color:#fff; padding:15px 0; z-index:100;}
-    header h1 { font-size:1.8rem; }
+    header { position:sticky; top:0; background:#003bb3; color:#fff; padding:20px 0; z-index:100; text-align:center; }
+    header h1 { font-size:2.5rem; margin-bottom:10px; }
     nav { margin-top:10px; }
-    nav a { color:#fff; margin:0 12px; font-weight:500; }
+    nav a { color:#fff; margin:0 15px; font-weight:500; font-size:1.1rem; }
     nav a:hover { text-decoration:underline; }
 
     /* 슬라이드 배너 */
@@ -23,18 +23,18 @@
     .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-shadow:1px 1px 5px rgba(0,0,0,0.5); font-weight:600; font-size:1.3rem; transition:opacity 1s ease-in-out; }
     .slide h2 { font-size:2rem; margin-bottom:15px; }
     .slide p { font-size:1.1rem; margin-bottom:20px; }
-    .slide a { background:#ffcc00; color:#000; padding:12px 25px; border-radius:30px; font-weight:600; }
+    .slide a { background:#ffcc00; color:#000; padding:15px 30px; border-radius:30px; font-weight:700; font-size:1.2rem; }
     .slide a:hover { background:#ffde4d; }
 
     /* 요금제 섹션 */
     .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
     .plan { border:1px solid #ddd; border-radius:15px; padding:30px; transition:0.3s; }
     .plan:hover { box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-    .plan h3 { color:#003bb3; margin-bottom:10px; }
-    .plan p { margin-bottom:15px; }
+    .plan h3 { color:#003bb3; margin-bottom:10px; font-size:1.5rem; }
+    .plan p { margin-bottom:15px; font-size:1.1rem; }
 
     /* 상담 섹션 */
-    #contact a { display:inline-block; margin:10px 10px; background:#003bb3; color:#fff; padding:12px 25px; border-radius:30px; font-weight:600; transition:0.3s;}
+    #contact a { display:inline-block; margin:10px 10px; background:#003bb3; color:#fff; padding:15px 30px; border-radius:30px; font-weight:700; font-size:1.2rem; transition:0.3s;}
     #contact a:hover { background:#0056e6; }
 
     /* 푸터 */
@@ -43,7 +43,8 @@
     @media(max-width:768px){
       .slide h2{font-size:1.5rem;}
       .slide p{font-size:1rem;}
-      header h1{font-size:1.4rem;}
+      header h1{font-size:2rem;}
+      nav a { font-size:1rem; }
     }
   </style>
 </head>
@@ -61,55 +62,4 @@
   </header>
 
   <!-- 슬라이드 배너 -->
-  <section class="hero" id="home">
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6d1c61d1?auto=format&fit=crop&w=1400&q=80'); opacity:1;">
-      <h2>인터넷 + TV 동시 가입 시 최대 46만원 현금지원!</h2>
-      <p>가입만 해도 사은품 증정 🎁</p>
-      <p>충북방송 공식 대리점 — 믿을 수 있는 서비스</p>
-      <a href="#contact">가입 문의하기</a>
-    </div>
-  </section>
-
-  <!-- 인터넷 요금제 -->
-  <section id="internet">
-    <h2>인터넷 요금제 안내</h2>
-    <div class="plans">
-      <div class="plan"><h3>100M 인터넷</h3><p>월 22,000원</p><p>가장 기본적인 인터넷 이용</p></div>
-      <div class="plan"><h3>500M 인터넷</h3><p>월 27,500원</p><p>가정용 / 재택근무 추천</p></div>
-      <div class="plan"><h3>1G 인터넷</h3><p>월 33,000원</p><p>대용량 다운로드 / 4K 영상용</p></div>
-    </div>
-  </section>
-
-  <!-- TV 섹션 -->
-  <section id="tv">
-    <h2>TV 결합상품 안내</h2>
-    <p>인터넷과 함께 가입 시 결합 할인 + 사은품 증정!</p>
-  </section>
-
-  <!-- 상담 섹션 -->
-  <section id="contact">
-    <h2>가입 문의</h2>
-    <p>전화 상담 또는 카카오톡 상담을 통해 빠르게 안내받으세요.</p>
-    <a href="tel:01058781084">📞 전화: 010-5878-1084</a>
-    <a href="https://pf.kakao.com/">💬 카카오톡 상담하기</a>
-  </section>
-
-  <!-- 푸터 -->
-  <footer>
-    <p>상호명: CCS 충북방송 가입센터 | 대표번호: 010-5878-1084</p>
-    <p>주소: 충북 음성군 맹동면 | ⓒ 2025 CCS Internet Center. All rights reserved.</p>
-  </footer>
-
-  <!-- 슬라이드 JS -->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    setInterval(()=>{
-      slides[current].style.opacity = 0;
-      current = (current+1)%slides.length;
-      slides[current].style.opacity = 1;
-    },5000);
-  </script>
-
-</body>
-</html>
+  <section class="hero" id
