@@ -1,133 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCS 충북방송 가입센터</title>
-  <style>
-    /* 기본 스타일 */
-    body, html { margin:0; padding:0; font-family:"Noto Sans KR", sans-serif; scroll-behavior:smooth; }
-    a { text-decoration:none; }
-    h1,h2,h3,p { margin:0; padding:0; }
-    section { padding:60px 20px; text-align:center; }
-
-    /* 헤더 */
-    header { position:sticky; top:0; background:#003bb3; color:#fff; padding:20px 0; z-index:100; text-align:center; }
-    header h1 { font-size:2.8rem; font-weight:700; margin-bottom:10px; }
-    nav { margin-top:10px; }
-    nav a { color:#fff; margin:0 15px; font-weight:500; font-size:1.2rem; }
-    nav a:hover { text-decoration:underline; }
-
-    /* 슬라이드 배너 */
-    .hero { position:relative; height:400px; overflow:hidden; }
-    .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-shadow:2px 2px 6px rgba(0,0,0,0.6); font-weight:700; transition:opacity 1s ease-in-out; opacity:0; }
-    .slide.active { opacity:1; }
-    .slide h2 { font-size:2.2rem; margin-bottom:15px; animation: pulse 2s infinite; }
-    .slide p { font-size:1.2rem; margin-bottom:20px; }
-    .slide a { background:#ffcc00; color:#000; padding:16px 35px; border-radius:35px; font-weight:700; font-size:1.3rem; transition:0.3s; }
-    .slide a:hover { background:#ffde4d; transform:scale(1.05); }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    /* 요금제 섹션 */
-    .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; max-width:1000px; margin:0 auto; }
-    .plan { border:1px solid #ddd; border-radius:15px; padding:35px; transition:0.3s; background:#fff; }
-    .plan:hover { box-shadow:0 6px 15px rgba(0,0,0,0.2); }
-    .plan h3 { color:#003bb3; margin-bottom:12px; font-size:1.6rem; }
-    .plan p { margin-bottom:15px; font-size:1.1rem; }
-
-    /* 상담 섹션 */
-    #contact a { display:inline-block; margin:10px 10px; background:#003bb3; color:#fff; padding:16px 35px; border-radius:35px; font-weight:700; font-size:1.3rem; transition:0.3s; }
-    #contact a:hover { background:#0056e6; transform:scale(1.05); }
-
-    /* 푸터 */
-    footer { background:#f2f2f2; color:#555; text-align:center; padding:30px 10px; font-size:0.9rem; }
-
-    @media(max-width:768px){
-      .slide h2{font-size:1.6rem;}
-      .slide p{font-size:1rem;}
-      header h1{font-size:2rem;}
-      nav a { font-size:1rem; }
-      .slide a { font-size:1.1rem; padding:12px 25px; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CCS-TV 스타일 샘플 (반응형)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="홈으로">CCS-TV 샘플</a>
 
-  <!-- 헤더 -->
-  <header>
-    <h1>CCS 충북방송 가입센터</h1>
-    <nav>
-      <a href="#home">홈</a>
-      <a href="#internet">인터넷</a>
-      <a href="#tv">TV</a>
-      <a href="#contact">문의하기</a>
-    </nav>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="주요 메뉴">
+        <a href="#" class="active">홈</a>
+        <a href="#">프로그램</a>
+        <a href="#">영상</a>
+        <a href="#">갤러리</a>
+        <a href="#">공지</a>
+        <a href="#">문의</a>
+      </nav>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="메뉴 열기">
+        <span class="hamburger"></span>
+      </button>
+    </div>
   </header>
 
-  <!-- 슬라이드 배너 -->
-  <section class="hero" id="home">
-    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6d1c61d1?auto=format&fit=crop&w=1400&q=80');">
-      <h2>인터넷 + TV 동시 가입 시 최대 46만원 현금지원!</h2>
-      <p>가입만 해도 사은품 증정 🎁</p>
-      <p>충북방송 공식 대리점 — 믿을 수 있는 서비스</p>
-      <a href="tel:01058781084">📞 가입 문의하기</a>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80');">
-      <h2>빠르고 안정적인 인터넷 서비스</h2>
-      <p>가정용, 사무실용 모두 완벽 지원</p>
-      <a href="tel:01058781084">📞 가입 문의하기</a>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1605902711622-cfb43c4432d8?auto=format&fit=crop&w=1400&q=80');">
-      <h2>가입만 해도 풍성한 사은품 제공!</h2>
-      <p>신규 가입 고객 전용 이벤트</p>
-      <a href="tel:01058781084">📞 가입 문의하기</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero slider -->
+    <section class="hero" aria-label="대표 슬라이드">
+      <div class="hero-viewport">
+        <div class="hero-slider" id="heroSlider">
+          <div class="slide" style="background-image:url('https://picsum.photos/id/1015/1400/700');" aria-hidden="false">
+            <div class="slide-inner">
+              <h1>대표 프로그램 제목 1</h1>
+              <p>간단한 설명 문구로 방문자를 유도합니다. (샘플 텍스트)</p>
+              <a class="btn" href="#">자세히 보기</a>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('https://picsum.photos/id/1016/1400/700');" aria-hidden="true">
+            <div class="slide-inner">
+              <h1>대표 프로그램 제목 2</h1>
+              <p>두 번째 슬라이드의 설명입니다.</p>
+              <a class="btn" href="#">자세히 보기</a>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('https://picsum.photos/id/1025/1400/700');" aria-hidden="true">
+            <div class="slide-inner">
+              <h1>대표 프로그램 제목 3</h1>
+              <p>세 번째 홍보 문구 예시입니다.</p>
+              <a class="btn" href="#">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- 인터넷 요금제 -->
-  <section id="internet">
-    <h2>인터넷 요금제 안내</h2>
-    <div class="plans">
-      <div class="plan"><h3>100M 인터넷</h3><p>월 22,000원</p><p>가장 기본적인 인터넷 이용</p></div>
-      <div class="plan"><h3>500M 인터넷</h3><p>월 27,500원</p><p>가정용 / 재택근무 추천</p></div>
-      <div class="plan"><h3>1G 인터넷</h3><p>월 33,000원</p><p>대용량 다운로드 / 4K 영상용</p></div>
+      <div class="hero-controls">
+        <button id="prevHero" class="control" aria-label="이전 슬라이드">‹</button>
+        <div id="heroDots" class="dots" role="tablist" aria-label="슬라이드 선택"></div>
+        <button id="nextHero" class="control" aria-label="다음 슬라이드">›</button>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="section container" aria-label="주요 프로그램">
+      <h2 class="section-title">주요 프로그램</h2>
+      <div class="program-grid" id="programGrid">
+        <article class="program-card">
+          <img src="https://picsum.photos/seed/p1/800/450" alt="프로그램1 썸네일">
+          <div class="card-body">
+            <h3>프로그램 1</h3>
+            <p class="meta">방영: 매주 월요일 20:00</p>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <img src="https://picsum.photos/seed/p2/800/450" alt="프로그램2 썸네일">
+          <div class="card-body">
+            <h3>프로그램 2</h3>
+            <p class="meta">방영: 매주 수요일 18:00</p>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <img src="https://picsum.photos/seed/p3/800/450" alt="프로그램3 썸네일">
+          <div class="card-body">
+            <h3>프로그램 3</h3>
+            <p class="meta">방영: 토요일 특집</p>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <img src="https://picsum.photos/seed/p4/800/450" alt="프로그램4 썸네일">
+          <div class="card-body">
+            <h3>프로그램 4</h3>
+            <p class="meta">방영: 일요일 10:00</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Latest videos -->
+    <section class="section gray-bg" aria-label="최신 영상">
+      <div class="container">
+        <h2 class="section-title">최신 영상</h2>
+        <div class="video-row">
+          <div class="video-thumb">
+            <img src="https://picsum.photos/seed/v1/640/360" alt="동영상 1">
+            <div class="video-meta">
+              <h4>하이라이트 1</h4>
+              <p class="meta">04:32 · 2025-01-10</p>
+            </div>
+          </div>
+
+          <div class="video-thumb">
+            <img src="https://picsum.photos/seed/v2/640/360" alt="동영상 2">
+            <div class="video-meta">
+              <h4>토크 영상 2</h4>
+              <p class="meta">12:15 · 2025-01-08</p>
+            </div>
+          </div>
+
+          <div class="video-thumb">
+            <img src="https://picsum.photos/seed/v3/640/360" alt="동영상 3">
+            <div class="video-meta">
+              <h4>인터뷰 3</h4>
+              <p class="meta">08:50 · 2025-01-05</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="section container" aria-label="공지">
+      <h2 class="section-title">공지·뉴스</h2>
+      <ul class="news-list">
+        <li><a href="#">[공지] 사이트 유지보수 안내 — 2025-01-12</a></li>
+        <li><a href="#">[뉴스] 신작 프로그램 방영 안내</a></li>
+        <li><a href="#">[업데이트] 모바일 페이지 개선</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>CCS-TV 샘플</strong>
+        <p>주소: 서울특별시 예시구 예시로 123</p>
+        <p>대표 전화: 02-000-0000</p>
+      </div>
+      <div class="footer-right">
+        <p>© 2025 CCS-TV 샘플. All rights reserved.</p>
+      </div>
     </div>
-  </section>
-
-  <!-- TV 섹션 -->
-  <section id="tv">
-    <h2>TV 결합상품 안내</h2>
-    <p>인터넷과 함께 가입 시 결합 할인 + 사은품 증정!</p>
-  </section>
-
-  <!-- 상담 섹션 -->
-  <section id="contact">
-    <h2>가입 문의</h2>
-    <p>전화 상담을 통해 빠르게 안내받으세요.</p>
-    <a href="tel:01058781084">📞 전화: 010-5878-1084</a>
-  </section>
-
-  <!-- 푸터 -->
-  <footer>
-    <p>상호명: CCS 충북방송 가입센터 | 대표번호: 010-5878-1084</p>
-    <p>주소: 충북 음성군 맹동면 | ⓒ 2025 CCS Internet Center. All rights reserved.</p>
   </footer>
 
-  <!-- 슬라이드 JS -->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    setInterval(()=>{
-      slides[current].classList.remove('active');
-      current = (current+1) % slides.length;
-      slides[current].classList.add('active');
-    },5000);
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
