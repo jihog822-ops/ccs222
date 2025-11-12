@@ -1,223 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <meta name="naver-site-verification" content="db6fabc3e54bdb4c150f836619575900271d9c71" />
-<title>CCS 충북방송 가입센터 - 진천 음성 충주 제천</title>
-<meta name="description" content="충북 진천, 음성, 충주, 제천 지역 CCS 충북방송 케이블TV, 인터넷 가입센터입니다. 빠른 상담과 친절한 서비스 제공합니다.">
-<meta name="robots" content="index, follow">
-<meta name="naver-site-verification" content="(여기에 네이버 서치어드바이저 발급 코드 들어감)">
-<meta property="og:title" content="CCS 충북방송 가입센터 - 진천 음성 충주 제천">
-<meta property="og:description" content="충북 진천, 음성, 충주, 제천 지역 CCS 충북방송 케이블TV, 인터넷 가입센터입니다. 빠른 상담과 친절한 서비스 제공합니다.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ccs-jinchun.netlify.app/">
-<meta property="og:image" content="(추후 썸네일 이미지 추가 가능)"> 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CCS 충북방송 가입센터</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0; font-family: 'Noto Sans', sans-serif; background: #fafafa;
-      display: flex; flex-direction: column; min-height: 100vh;
-      animation: fadeIn 1s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .header {
-      background: linear-gradient(90deg, #0040ff, #00c6ff);
-      padding: 20px; position: relative; height: 140px;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      animation: slideDown 1s ease-in;
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .header button {
-      font-size: 18px; padding: 12px 24px; border: none; border-radius: 12px;
-      color: white; cursor: pointer; font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.2s;
-    }
-    .header button:hover { transform: scale(1.05); }
-    .as-button {
-      position: absolute; top: 20px; left: 20px;
-      background: linear-gradient(90deg, #00bfff, #3399ff);
-    }
-    .new-button {
-      position: fixed; top: 20px; right: 20px;
-      background: linear-gradient(90deg, #ff0066, #ff3399);
-      z-index: 999;
-    }
-    .center-text {
-      text-align: center; color: white;
-    }
-    .center-text h1 {
-      font-size: 30px; margin: 0; font-weight: 800;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    }
-    .center-text p {
-      font-size: 18px; margin: 5px 0 0 0; opacity: 0.9;
-    }
-    .content {
-      flex: 1; padding: 30px; background: white; margin: 20px;
-      border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      overflow-x: auto; animation: fadeIn 1s ease-in;
-    }
-    table {
-      width: 100%; min-width: 600px; border-collapse: collapse;
-      border-radius: 12px; overflow: hidden; background: #ffffff;
-      animation: fadeIn 1.5s ease-in;
-    }
-    th, td {
-      padding: 16px; border: 1px solid #ddd; text-align: center;
-      transition: background 0.3s;
-    }
-    th {
-      background: linear-gradient(90deg, #00b4db, #0083b0);
-      color: white;
-    }
-    tr:hover td {
-      background: #e0f7fa;
-    }
-    .call-banner {
-      background: linear-gradient(90deg, #ff9900, #ff6600);
-      text-align: center; padding: 20px 10px; color: white;
-      box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
-      animation: fadeIn 2s ease-in;
-    }
-    .call-content {
-      display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; position: relative;
-    }
-    .phone-icon { width: 60px; height: 60px; margin-right: 15px; }
-    .call-info { text-align: left; }
-    .call-title {
-      font-size: 18px; font-weight: bold; color: #ffe600;
-    }
-    .call-number {
-      display: block; font-size: 32px; font-weight: bold;
-      margin: 5px 0; color: white; text-decoration: none;
-      transition: color 0.3s;
-    }
-    .call-number:hover { color: #ffff66; }
-    .call-desc { font-size: 15px; color: white; }
-    .call-bubble {
-      background: red; color: white; font-weight: bold;
-      font-size: 14px; padding: 10px 12px; border-radius: 50%;
-      position: fixed; bottom: 90px; right: 20px;
-      line-height: 1.2; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-decoration: none; display: flex; align-items: center; justify-content: center;
-      width: 60px; height: 60px; transition: background 0.3s, transform 0.2s;
-      z-index: 999;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    .footer {
-      background: black; color: white; text-align: center;
-      padding: 15px 10px; font-size: 14px;
-      margin-top: 30px;
-    }
-    @media (max-width: 600px) {
-      .header { height: auto; flex-direction: column; padding: 20px; }
-      .header button { position: static; margin: 10px 0; width: 80%; max-width: 300px; }
-      .center-text h1 { font-size: 24px; }
-      .center-text p { font-size: 14px; }
-      table { min-width: 100%; font-size: 14px; }
-      .call-bubble { width: 50px; height: 50px; font-size: 12px; bottom: 80px; right: 10px; }
+    /* 기본 스타일 */
+    body, html { margin:0; padding:0; font-family: "Noto Sans KR", sans-serif; scroll-behavior: smooth;}
+    a { text-decoration:none; }
+    h1,h2,h3,p { margin:0; padding:0; }
+    section { padding:60px 20px; text-align:center; }
+    
+    /* 헤더 */
+    header { position:sticky; top:0; background:#003bb3; color:#fff; padding:15px 0; z-index:100;}
+    header h1 { font-size:1.8rem; }
+    nav { margin-top:10px; }
+    nav a { color:#fff; margin:0 12px; font-weight:500; }
+    nav a:hover { text-decoration:underline; }
+
+    /* 슬라이드 배너 */
+    .hero { position:relative; height:350px; overflow:hidden; }
+    .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-shadow:1px 1px 5px rgba(0,0,0,0.5); font-weight:600; font-size:1.3rem; transition:opacity 1s ease-in-out; }
+    .slide h2 { font-size:2rem; margin-bottom:15px; }
+    .slide p { font-size:1.1rem; margin-bottom:20px; }
+    .slide a { background:#ffcc00; color:#000; padding:12px 25px; border-radius:30px; font-weight:600; }
+    .slide a:hover { background:#ffde4d; }
+
+    /* 요금제 섹션 */
+    .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .plan { border:1px solid #ddd; border-radius:15px; padding:30px; transition:0.3s; }
+    .plan:hover { box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    .plan h3 { color:#003bb3; margin-bottom:10px; }
+    .plan p { margin-bottom:15px; }
+
+    /* 상담 섹션 */
+    #contact a { display:inline-block; margin:10px 10px; background:#003bb3; color:#fff; padding:12px 25px; border-radius:30px; font-weight:600; transition:0.3s;}
+    #contact a:hover { background:#0056e6; }
+
+    /* 푸터 */
+    footer { background:#f2f2f2; color:#555; text-align:center; padding:30px 10px; font-size:0.9rem; }
+
+    @media(max-width:768px){
+      .slide h2{font-size:1.5rem;}
+      .slide p{font-size:1rem;}
+      header h1{font-size:1.4rem;}
     }
   </style>
 </head>
 <body>
-<div class="header">
-  <button class="as-button" onclick="window.location.href='tel:0438507000';">AS 접수</button>
-  <div class="center-text">
+
+  <!-- 헤더 -->
+  <header>
     <h1>CCS 충북방송 가입센터</h1>
-    <p>010-8475-3598</p>
-  </div>
-  <button class="new-button" onclick="window.location.href='tel:01084753598';">신규 접수</button>
-</div>
+    <nav>
+      <a href="#home">홈</a>
+      <a href="#internet">인터넷</a>
+      <a href="#tv">TV</a>
+      <a href="#contact">문의하기</a>
+    </nav>
+  </header>
 
-<!-- 요금표 영역 (TV / 인터넷 / 인터넷+TV) -->
-<div class="content">
-  <h2 style="text-align:center;">TV 요금제</h2>
-  <table>
-    <thead>
-      <tr><th>상품명</th><th>월 요금</th><th>혜택</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>케이블TV 127채널</td><td>8,800원</td><td>4개월 무료 / 설치비 무료</td></tr>
-      <tr><td>보급형HD 127채널 (4년)</td><td>10,000원</td><td>4개월 무료 / 설치비무료</td></tr>
-      <tr><td>보급형HD 127채널 (4년)</td><td>10,000원</td><td>4개월 무료 요금할인 상품 / HD셋탑박스</td></tr>
-      <tr><td>기본형HD 142채널</td><td>13,200원</td><td>3개월 무료 요금할인 상품 / HD셋탑박스</td></tr>
-      <tr><td>고급형HD 174채널</td><td>14,300원</td><td>3개월 무료 요금할인 상품 / HD셋탑박스</td></tr>
-      <tr><td>보급형HD 추가시</td><td>6,600원</td><td>TV 추가 할인</td></tr>
-      <tr><td>케이블TV 추가시</td><td>5,500원</td><td>TV 추가 할인</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="content">
-  <h2 style="text-align:center;">인터넷 요금제</h2>
-  <table>
-    <thead>
-      <tr><th>상품명</th><th>월 요금</th><th>혜택</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>인터넷 초고속광렌 (4년)</td><td>9,900원</td><td>요금할인 상품</td></tr>
-      <tr><td>인터넷 초고속광렌 (4년)</td><td>9.900원</td><td>3개월 무료 요금할인 상품</td></tr>
-      <tr><td>기가슬림 500M (4년)</td><td>12,100원</td><td>아파트/오피스텔 요금할인 상품</td></tr>
-      <tr><td>기가슬림 500M (3년)</td><td>15,400원</td><td>3개월 무료 요금할인 상품</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="content">
-  <h2 style="text-align:center;">인터넷 + TV 요금제</h2>
-  <table>
-    <thead>
-      <tr><th>상품명</th><th>월 요금</th><th>혜택</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>인터넷100 + 케이블TV 127</td><td>17,830원</td><td>4개월 무료 공유기지급 상품</td></tr>
-      <tr><td>인터넷100 + 보급형HD 127 (4년)</td><td>17,390원</td><td>4개월 무료 요금할인 상품</td></tr>
-    
-      <tr><td>인터넷100 + 기본형HD 142 (4년)</td><td>21,000원</td><td>4개월 무료 요금할인 상품</td></tr>
-      <tr><td>인터넷100 + 기본형HD 142 (3년)</td><td>23,740원</td><td>3개월 무료 요금할인 상품</td></tr>
-      <tr><td>인터넷100 + 고급형HD 174 (4년)</td><td>21,840원</td><td>4개월 무료 요금할인 상품</td></tr>
-      <tr><td>인터넷100 + 고급형HD 174 (3년)</td><td>24,040원</td><td>3개월 무료 요금할인 상품</td></tr>
-      <tr><td>기가슬림 + 보급형HD 105</td><td>24,040원</td><td>3개월 무료 요금할인 상품</td></tr>
-      <tr><td>기가슬림 + 기본형HD 142</td><td>27,970원</td><td>3개월 무료 요금할인 상품</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- 하단 통화 배너 -->
-<div class="call-banner">
-  <div class="call-content">
-    <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="전화 아이콘" class="phone-icon">
-    <div class="call-info">
-      <div class="call-title">가입문의전화</div>
-      <a href="tel:01084753598" class="call-number">010-8475-3598</a>
-      <div class="call-desc">전화주시면 성심껏 답변해드리겠습니다.<br>연중무휴 상담 / 24시간 상담가능 연락주세요</div>
+  <!-- 슬라이드 배너 -->
+  <section class="hero" id="home">
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6d1c61d1?auto=format&fit=crop&w=1400&q=80'); opacity:1;">
+      <h2>인터넷 + TV 동시 가입 시 최대 46만원 현금지원!</h2>
+      <p>가입만 해도 사은품 증정 🎁</p>
+      <p>충북방송 공식 대리점 — 믿을 수 있는 서비스</p>
+      <a href="#contact">가입 문의하기</a>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- 즉시 통화 버튼 고정 -->
-<a href="tel:01084753598" class="call-bubble">즉시<br>통화</a>
+  <!-- 인터넷 요금제 -->
+  <section id="internet">
+    <h2>인터넷 요금제 안내</h2>
+    <div class="plans">
+      <div class="plan"><h3>100M 인터넷</h3><p>월 22,000원</p><p>가장 기본적인 인터넷 이용</p></div>
+      <div class="plan"><h3>500M 인터넷</h3><p>월 27,500원</p><p>가정용 / 재택근무 추천</p></div>
+      <div class="plan"><h3>1G 인터넷</h3><p>월 33,000원</p><p>대용량 다운로드 / 4K 영상용</p></div>
+    </div>
+  </section>
 
-<!-- 푸터 -->
-<div class="footer">
-  © 2025  씨씨에스충북방송 가입센터 사업자등록번호:509-58-00736 대표자:황규호
-     주소:충북 진천군 덕산읍 예지1길 4 202호 . All rights reserved.
-</div>
+  <!-- TV 섹션 -->
+  <section id="tv">
+    <h2>TV 결합상품 안내</h2>
+    <p>인터넷과 함께 가입 시 결합 할인 + 사은품 증정!</p>
+  </section>
+
+  <!-- 상담 섹션 -->
+  <section id="contact">
+    <h2>가입 문의</h2>
+    <p>전화 상담 또는 카카오톡 상담을 통해 빠르게 안내받으세요.</p>
+    <a href="tel:01058781084">📞 전화: 010-5878-1084</a>
+    <a href="https://pf.kakao.com/">💬 카카오톡 상담하기</a>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>상호명: CCS 충북방송 가입센터 | 대표번호: 010-5878-1084</p>
+    <p>주소: 충북 음성군 맹동면 | ⓒ 2025 CCS Internet Center. All rights reserved.</p>
+  </footer>
+
+  <!-- 슬라이드 JS -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(()=>{
+      slides[current].style.opacity = 0;
+      current = (current+1)%slides.length;
+      slides[current].style.opacity = 1;
+    },5000);
+  </script>
 
 </body>
 </html>
