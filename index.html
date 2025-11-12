@@ -62,4 +62,54 @@
   </header>
 
   <!-- 슬라이드 배너 -->
-  <section class="hero" id
+  <section class="hero" id="home">
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6d1c61d1?auto=format&fit=crop&w=1400&q=80'); opacity:1;">
+      <h2>인터넷 + TV 동시 가입 시 최대 46만원 현금지원!</h2>
+      <p>가입만 해도 사은품 증정 🎁</p>
+      <p>충북방송 공식 대리점 — 믿을 수 있는 서비스</p>
+      <a href="tel:01058781084">📞 가입 문의하기</a>
+    </div>
+  </section>
+
+  <!-- 인터넷 요금제 -->
+  <section id="internet">
+    <h2>인터넷 요금제 안내</h2>
+    <div class="plans">
+      <div class="plan"><h3>100M 인터넷</h3><p>월 22,000원</p><p>가장 기본적인 인터넷 이용</p></div>
+      <div class="plan"><h3>500M 인터넷</h3><p>월 27,500원</p><p>가정용 / 재택근무 추천</p></div>
+      <div class="plan"><h3>1G 인터넷</h3><p>월 33,000원</p><p>대용량 다운로드 / 4K 영상용</p></div>
+    </div>
+  </section>
+
+  <!-- TV 섹션 -->
+  <section id="tv">
+    <h2>TV 결합상품 안내</h2>
+    <p>인터넷과 함께 가입 시 결합 할인 + 사은품 증정!</p>
+  </section>
+
+  <!-- 상담 섹션 -->
+  <section id="contact">
+    <h2>가입 문의</h2>
+    <p>전화 상담을 통해 빠르게 안내받으세요.</p>
+    <a href="tel:01058781084">📞 전화: 010-5878-1084</a>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>상호명: CCS 충북방송 가입센터 | 대표번호: 010-5878-1084</p>
+    <p>주소: 충북 음성군 맹동면 | ⓒ 2025 CCS Internet Center. All rights reserved.</p>
+  </footer>
+
+  <!-- 슬라이드 JS -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(()=>{
+      slides[current].style.opacity = 0;
+      current = (current+1)%slides.length;
+      slides[current].style.opacity = 1;
+    },5000);
+  </script>
+
+</body>
+</html>
